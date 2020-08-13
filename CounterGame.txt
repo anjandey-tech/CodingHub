@@ -1,0 +1,24 @@
+string counterGame(unsigned long long  n) {
+    cout<<"new number"<<"\n";
+    int count,steps=0;
+    while(n!=1)
+    {
+        if(!(n & n-1))
+        {
+            cout<<" n is of power 2 "<<n<<"\n";
+            n=n>>1;
+            steps++;
+        }
+        else
+        {   
+            count=log2(n);
+            unsigned long long int p=1ULL<<count;
+            n=n-p;
+            steps++;
+        }
+    }
+    if(steps%2==0)
+    return "Richard";
+    else
+    return "Louise";
+}
