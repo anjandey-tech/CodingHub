@@ -1,0 +1,17 @@
+int height(Node* root) {
+        static int c=0,d=0;
+        if(!root)
+        {
+            d=max(c,d);
+        }
+
+        else
+        {
+            c++;
+            height(root->left);
+            height(root->right);
+            c--;
+
+        }
+        return d-1;
+    }
