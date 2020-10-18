@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t,n;
+	string temp;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>n;
+	    cin>>temp;
+	    if(n==1)
+	    cout<<"NO";
+	    
+	    else if(n==2)
+	    {
+	        if(temp[0]!=temp[1])
+	        cout<<"NO";
+	        else 
+	        cout<<"YES";
+	    }
+	    
+	    else
+	    {
+	        char k=temp[n-1];
+	        int f=0;
+	        for(int i=0;i<n-1;i++)
+	        {
+	            if(temp[i]==k)
+	            {
+	                f=1;
+	                break;
+	            }
+	        }
+	        if(!f)
+	        cout<<"NO";
+	        else
+	        cout<<"YES";
+	    }
+	    
+	    
+	    cout<<"\n";
+	    
+	}
+	return 0;
+}
