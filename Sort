@@ -1,0 +1,42 @@
+#include <iostream>
+#include<unordered_map>
+using namespace std;
+
+int main() {
+	
+	int t,n,i;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>n;
+	    int a[n];
+	    for(i=0;i<n;i++)
+	    cin>>a[i];
+	    int left=0,mid=0,right=n-1;
+	    while(mid<=right)
+	    {
+	        if(a[mid]==0)
+	        {
+	            int temp=a[mid];
+	            a[mid]=a[left];
+	            a[left]=temp;
+	            left++;
+	            mid++;
+	        }
+	        else if(a[mid]==1)
+	        mid++;
+	        else{
+	            int temp=a[mid];
+	            a[mid]=a[right];
+	            a[right]=temp;
+	            right--;
+	        }
+	    }
+	    for(i=0;i<n;i++)
+	    cout<<a[i]<<" ";
+	    cout<<"\n";
+	    
+	   
+	}
+	return 0;
+}
